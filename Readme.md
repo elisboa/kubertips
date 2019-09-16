@@ -10,5 +10,7 @@
 ### Kubernetes basic commands
 
 `kubectl get nodes -o wide # list all nodes`
+
 `kubectl get pods -o wide --all-namespaces # list all pods`
+
 `kubectl get deploys -o wide --all-namespaces # list all deploys`
