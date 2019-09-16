@@ -4,7 +4,7 @@ Basically it's a quick start approach to new Kubernetes clusters
 
 ---
 
-#### Kubernetes Dashboard
+#### Dashboard
 
 1. `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml # deploy dashboard`
 2. `kubectl apply -f ServiceAccount-kubernetes-dashboard-admin-user.yaml # create service account dashboard admin user`
@@ -12,7 +12,7 @@ Basically it's a quick start approach to new Kubernetes clusters
 
 ---
 
-#### Kubernetes basic commands
+#### Basic commands
 
 `kubectl get nodes -o wide # list all nodes`
 
