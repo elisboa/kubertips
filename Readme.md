@@ -1,5 +1,8 @@
 # My Kubernetes basic toolkit
-## Basically it's a quick start approach to new Kubernetes clusters
+
+Basically it's a quick start approach to new Kubernetes clusters
+
+---
 
 #### Kubernetes Dashboard
 
