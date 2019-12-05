@@ -21,3 +21,17 @@ Basically it's a quick start approach to new Kubernetes clusters
 3. `kubectl apply -f ClusterRoleBinding-dashboard-admin-user.yaml # create cluster role binding`
 
 ---
+
+#### Creating a deploy and a service without a yaml
+
+`kubectl run -n NAMESPACE DEPLOY-NAME --image=IMAGE_REGISTRY/IMAGE_NAME --port=9090 --expose=true`
+
+This will create a deploy and a service using `ClusterIP`
+
+You can edit it later by doing:
+
+`kubectl edit deploy DEPLOY-NAME -n NAMESPACE` to edit the deploy entry
+and
+`kubectl edit service DEPLOY-NAME -n NAMESPACE` to edit the service entry
+
+Note that in some cases the ClusterIP won't work, so you must use another one like NodePort if you want external access to your pod.
