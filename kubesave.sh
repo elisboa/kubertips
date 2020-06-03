@@ -25,11 +25,8 @@ do
     fi
 done
 
-
-
-
 # Core part
-for OBJECT in deploy service
+for OBJECT in deploy service secret
 do
 
     for NAMESPACE in $(kubectl get namespaces | grep -v ^NAME | awk '{print $1}')
