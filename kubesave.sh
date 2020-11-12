@@ -18,15 +18,15 @@ do
     echo -ne "Checking for command ${COMMAND}: "
     if command -v "${COMMAND}" >& /dev/null
     then
-        echo "FOUND"
+        echo "SUCCESS"
     else
-        echo "NOT FOUND. Exitting now"
+        echo "FAILED! ${COMMAND} not found. Exitting now"
         exit 1
     fi
 done
 
 # Core part
-for OBJECT in deploy service secret
+for OBJECT in deploy service secret configmap ingress HorizontalPodAutoscaler PersistentVolumeClaim
 do
 
     for NAMESPACE in $(kubectl get namespaces | grep -v ^NAME | awk '{print $1}')
