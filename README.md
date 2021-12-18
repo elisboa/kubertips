@@ -69,3 +69,10 @@ for namespace in $(kubectl get namespaces | grep -v NAME | cut -d\  -f1) ; do ec
 ```
 
 ... or you can [check this simple script](./kubesave.sh), which already saves deploys, services and secrets, all separated by namespace
+
+---
+
+#### List all running pod images
+```
+kubectl get pods -o jsonpath=’{range .items[*]}{.spec.containers[*].image}{“ “}’
+```
