@@ -76,3 +76,10 @@ for namespace in $(kubectl get namespaces | grep -v NAME | cut -d\  -f1) ; do ec
 ```
 kubectl get pods -o jsonpath=’{range .items[*]}{.spec.containers[*].image}{“ “}’
 ```
+
+---
+
+#### Basic Deployments Inventory
+```
+kubectl get deployments.apps --sort-by=metadata.name -o custom-columns=DEPLOYMENT:.metadata.name,CONTAINER_IMAGE:.spec.template.spec.containers[0].image,READY_REPLICAS:.status.availableReplicas,NAMESPACE:.metadata.namespace
+```
